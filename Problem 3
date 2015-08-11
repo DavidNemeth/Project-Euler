@@ -1,0 +1,17 @@
+
+//What is the largest prime factor of the number 600851475143 ?
+
+
+ long n = 600851475143;
+            int f = 3;
+            while (n > 1)
+            {
+                if (n % f == 0)
+                {
+                    n = n / f;                    
+                }
+                else
+                    f += 2;
+            }
+            Console.WriteLine(f);
+            Console.ReadLine();
