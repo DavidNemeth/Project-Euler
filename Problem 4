@@ -1,0 +1,21 @@
+//Find the largest palindrome made from the product of two 3-digit numbers.
+
+ static void Main(string[] args)
+        {            
+            List<int> list = new List<int>();
+            int x = 0;
+            for (int i = 99; i < 1000; i++)
+            {
+                for (int j = 99; j < 1000; j++)
+                {
+                    x = i * j;
+                    string reversed = new string(x.ToString().ToCharArray().Reverse().ToArray());
+                    if (reversed == x.ToString())
+                    {
+                        list.Add(x);
+                    }
+                }
+            }
+            Console.WriteLine(list.Max());
+            Console.ReadLine();
+        }
