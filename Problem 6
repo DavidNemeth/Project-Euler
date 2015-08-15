@@ -1,0 +1,25 @@
+//Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+ static void Main(string[] args)
+        {
+            Console.WriteLine(SquareofSum(100)-SumOfSquares(100));
+            Console.Read();
+        }
+        public static int SquareofSum(int i)
+        {
+            int sum = 0;
+            for (int j = 0; j <= i; j++)
+            {
+                sum += j;
+            }
+            return sum*sum;
+        }
+        public static int SumOfSquares(int n)
+        {
+            int sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                sum += i*i;
+            }
+            return sum;
+        }
