@@ -1,0 +1,12 @@
+public void Problem13()
+        {
+        //Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.(problem13.txt)
+            string result =
+            File.ReadAllLines("problem13.txt")
+            .Select(BigInteger.Parse)
+            .Aggregate((i1, i2) => i1 + i2)
+            .ToString()
+            .Substring(0, 10);
+            
+            Console.WriteLine(result);
+        }
