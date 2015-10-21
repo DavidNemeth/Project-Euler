@@ -1,2 +1,2 @@
 # Project-Euler
-My project euler solutions in c sharp.
+My project euler solutions.
