@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Problems1_50
@@ -47,11 +48,21 @@ namespace Problems1_50
             }
             Console.WriteLine("The sum of even fibonacci numbers under {0}: {1}", x, result);
         }
-        //3
+        //3 
+        //What is the largest prime factor of the number 600851475143 ? 
+        //TODO: speed 
         internal void LargestPrimeFactor(long number = 600851475143)
         {
-            //What is the largest prime factor of 600851475143
-            throw new NotImplementedException();
+            long sqrtNumber = (long)Math.Floor(Math.Sqrt(number));
+            long largestPrimeFactor = 0;
+            for (long i = 1; i < sqrtNumber; i = (i == 2) ? 3 : i + 2)
+            {
+                if (IsPrime(i) && number % i == 0)
+                {
+                    largestPrimeFactor = i;                    
+                }                
+            }
+            Console.WriteLine("Largest primefactor: {0} ", largestPrimeFactor);            
         }
         //4
         internal void LargestPalindromeProduct()
