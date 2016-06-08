@@ -11,7 +11,8 @@ namespace Problems1_50
             //problems.SumEvenFibonacci(4000000);
             //problems.LargestPrimeFactor();
             //problems.LargestPalindromeProduct();
-            problems.SmallestMultiple(1, 20);    
+            //problems.SmallestMultiple();
+            problems.SumSquareDifference(1000);
         }
     }
 }

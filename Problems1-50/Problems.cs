@@ -62,7 +62,7 @@ namespace Problems1_50
                     largestPrimeFactor = i;
                 }
             }
-            Console.WriteLine("Largest primefactor: {0} ", largestPrimeFactor);
+            Console.WriteLine("Largest primefactor of {0}: {1} ", number, largestPrimeFactor);
         }
         //4
         internal void LargestPalindromeProduct()
@@ -75,7 +75,7 @@ namespace Problems1_50
                 for (int y = 1000; y > 99; y--)
                 {
                     product = i * y;
-                    string reversed = Reverse(product);
+                    string reversed = product.Reverse();
                     if (reversed == product.ToString())
                     {
                         palindromes.Add(product);
@@ -83,25 +83,44 @@ namespace Problems1_50
                     }
                 }
             }
-            Console.WriteLine(palindromes.Max());
+            Console.WriteLine("Largets palindrom from two three digit procduct: {0}", palindromes.Max());
         }
         //5
-        internal void SmallestMultiple(long from = 1, long to = 20)
+        internal void SmallestMultiple(int by = 1, int to = 20)
         {
             //What is the smallest positive number that is evenly divisible by all of the numbers from number1 to numer2?
-            if (from > to)
+            if (by > to)
             {
-                Console.WriteLine("first method argument must be smaller than the second");
+                Console.WriteLine("The first parameter can not  be more than the second.");
             }
             else
             {
                 long result = 1;
-                for (long i = from; i <= to; i++)
+                for (long i = by; i <= to; i++)
                 {
                     result = LCM(result, i);
                 }
-                Console.WriteLine(result);
-            }            
+                Console.WriteLine("The smallest number evenly divisible from {0} to {1}: {2}", by, to, result);
+            }
+        }
+        //6
+        internal void SumSquareDifference(int input = 100)
+        {
+            //Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+            //bruteforce
+            long sumSquare = 0;
+            long squareSum = 0;
+            for (int i = 1; i <= input; i++)
+            {
+                sumSquare += i * i;
+            }
+            for (int i = 1; i <= input; i++)
+            {
+                squareSum += i;
+            }
+            squareSum = squareSum * squareSum;
+            long result = squareSum - sumSquare;
+            Console.WriteLine("The SumSquareDifference of the first {0} netural number is: {1}", input, result);
         }
     }
 }
