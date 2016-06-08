@@ -56,7 +56,24 @@ namespace Problems1_50
                 return primeList;
             }
         }
-
-
+        internal string Reverse(int input)
+        {
+            return new string(input.ToString().ToCharArray().Reverse().ToArray());
+        }
+        internal long GCD(long a, long b) //greatest common divisor
+        {
+            while (b != 0)
+            {
+                a %= b;
+                a ^= b;
+                b ^= a;
+                a ^= b;
+            }
+            return a;
+        }
+        internal long LCM(long a, long b) //lowest common multiple 
+        {
+            return a / GCD(a, b) * b;
+        }
     }
 }

@@ -48,33 +48,60 @@ namespace Problems1_50
             }
             Console.WriteLine("The sum of even fibonacci numbers under {0}: {1}", x, result);
         }
-        //3 
-        //What is the largest prime factor of the number 600851475143 ? 
-        //TODO: speed 
+        //3         
         internal void LargestPrimeFactor(long number = 600851475143)
         {
+            //What is the largest prime factor of the number 600851475143 ? 
+            //TODO: speed 
             long sqrtNumber = (long)Math.Floor(Math.Sqrt(number));
             long largestPrimeFactor = 0;
             for (long i = 1; i < sqrtNumber; i = (i == 2) ? 3 : i + 2)
             {
                 if (IsPrime(i) && number % i == 0)
                 {
-                    largestPrimeFactor = i;                    
-                }                
+                    largestPrimeFactor = i;
+                }
             }
-            Console.WriteLine("Largest primefactor: {0} ", largestPrimeFactor);            
+            Console.WriteLine("Largest primefactor: {0} ", largestPrimeFactor);
         }
         //4
         internal void LargestPalindromeProduct()
         {
             //Find the largest palindrome made from the product of two 3-digit numbers.
-            throw new NotImplementedException();
+            var palindromes = new List<int>();
+            int product = 0;
+            for (int i = 1000; i > 99; i--)
+            {
+                for (int y = 1000; y > 99; y--)
+                {
+                    product = i * y;
+                    string reversed = Reverse(product);
+                    if (reversed == product.ToString())
+                    {
+                        palindromes.Add(product);
+                        break;
+                    }
+                }
+            }
+            Console.WriteLine(palindromes.Max());
         }
         //5
-        internal void SmallestMultiple(int number1, int number2)
+        internal void SmallestMultiple(long from = 1, long to = 20)
         {
             //What is the smallest positive number that is evenly divisible by all of the numbers from number1 to numer2?
-            throw new NotImplementedException();
+            if (from > to)
+            {
+                Console.WriteLine("first method argument must be smaller than the second");
+            }
+            else
+            {
+                long result = 1;
+                for (long i = from; i <= to; i++)
+                {
+                    result = LCM(result, i);
+                }
+                Console.WriteLine(result);
+            }            
         }
     }
 }

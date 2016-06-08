@@ -9,9 +9,9 @@ namespace Problems1_50
             Problems problems = new Problems();
             //problems.SumMultiples(10);
             //problems.SumEvenFibonacci(4000000);
-            problems.LargestPrimeFactor();
+            //problems.LargestPrimeFactor();
             //problems.LargestPalindromeProduct();
-            //problems.SmallestMultiple(1, 20);    
+            problems.SmallestMultiple(1, 20);    
         }
     }
 }
