@@ -113,11 +113,8 @@ namespace Problems1_50
             for (int i = 1; i <= input; i++)
             {
                 sumSquare += i * i;
-            }
-            for (int i = 1; i <= input; i++)
-            {
                 squareSum += i;
-            }
+            }            
             squareSum = squareSum * squareSum;
             long result = squareSum - sumSquare;
             Console.WriteLine("The SumSquareDifference of the first {0} netural number is: {1}", input, result);
