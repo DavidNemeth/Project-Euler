@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Problems1_50
@@ -114,10 +115,36 @@ namespace Problems1_50
             {
                 sumSquare += i * i;
                 squareSum += i;
-            }            
+            }
             squareSum = squareSum * squareSum;
             long result = squareSum - sumSquare;
             Console.WriteLine("The SumSquareDifference of the first {0} netural number is: {1}", input, result);
+        }
+        //7
+        internal void NthPrime(int input = 10001)
+        {
+            //What is the 10001st prime number?
+            if (input > 200001)
+            {
+                Console.WriteLine("Input number is too large.");
+            }
+            else
+            {
+                Stopwatch watch = new Stopwatch();
+                watch.Start();
+                long count = 0;
+                var primes = new List<long>(input);
+                while (primes.Count < input)
+                {
+                    if (IsPrime(count))
+                    {
+                        primes.Add(count);
+                    }
+                    count++;
+                }
+                Console.WriteLine(watch.Elapsed);
+                Console.WriteLine(primes.Last());
+            }
         }
     }
 }

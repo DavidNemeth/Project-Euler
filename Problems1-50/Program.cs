@@ -12,7 +12,8 @@ namespace Problems1_50
             //problems.LargestPrimeFactor();
             //problems.LargestPalindromeProduct();
             //problems.SmallestMultiple();
-            problems.SumSquareDifference(100);
+            //problems.SumSquareDifference(100);
+            problems.NthPrime();
         }
     }
 }
