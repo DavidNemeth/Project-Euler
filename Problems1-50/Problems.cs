@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 
 namespace Problems1_50
@@ -145,6 +146,32 @@ namespace Problems1_50
                 Console.WriteLine(watch.Elapsed);
                 Console.WriteLine(primes.Last());
             }
+        }
+        //8
+        internal void LargestProductSeries(string FileName = "Digits.txt")
+        {
+            //Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
+            //TODO: find the indexes
+            var digitArray = File.ReadAllLines(FileName);
+            string digits = string.Join("", digitArray);             
+            long product = 0;            
+            long largestProduct = 0;            
+            for (int i = 0; i < digits.Length - 13; i++)
+            {
+                product = 1;
+                for (int j = 0; j < 13; j++)
+                {
+                    product *= long.Parse(digits.Substring(i + j, 1));
+                }
+                if (product > largestProduct)
+                {
+                    largestProduct = product;
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.");
+            Console.WriteLine("Greatest Product: {0}",largestProduct);
+            Console.WriteLine();
         }
     }
 }

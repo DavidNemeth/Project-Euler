@@ -13,7 +13,8 @@ namespace Problems1_50
             //problems.LargestPalindromeProduct();
             //problems.SmallestMultiple();
             //problems.SumSquareDifference(100);
-            problems.NthPrime();
+            //problems.NthPrime();
+            problems.LargestProductSeries();
         }
     }
 }
