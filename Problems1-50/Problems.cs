@@ -150,18 +150,37 @@ namespace Problems1_50
         //8
         internal void LargestProductSeries(string FileName = "Digits.txt")
         {
-            //Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.
-            //TODO: find the indexes
+            //Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.           
             var digitArray = File.ReadAllLines(FileName);
-            string digits = string.Join("", digitArray);             
-            long product = 0;            
-            long largestProduct = 0;            
+            string digits = string.Join("", digitArray);
+            long product = 0;
+            long largestProduct = 0;
+            var currentItems = new List<long>(13);
+            var maxItems = new List<long>(13);
             for (int i = 0; i < digits.Length - 13; i++)
             {
                 product = 1;
+                currentItems.Clear();
                 for (int j = 0; j < 13; j++)
                 {
                     product *= long.Parse(digits.Substring(i + j, 1));
+                    currentItems.Add(long.Parse(digits.Substring(i + j, 1)));
+                }
+
+                long maxCurrent = 1;
+                long maxTotal = 1;
+                foreach (var item in currentItems)
+                {
+                    maxCurrent *= item;
+                }
+                foreach (var item in maxItems)
+                {
+                    maxTotal *= item;
+                }
+
+                if (maxCurrent > maxTotal)
+                {
+                    maxItems = currentItems.ToList();
                 }
                 if (product > largestProduct)
                 {
@@ -170,8 +189,10 @@ namespace Problems1_50
             }
             Console.WriteLine();
             Console.WriteLine("Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.");
-            Console.WriteLine("Greatest Product: {0}",largestProduct);
-            Console.WriteLine();
+            Console.WriteLine("Greatest Product: {0}", largestProduct);
+            var items = string.Join(",", maxItems);
+            Console.WriteLine("From the products of {0} ", items);
+
         }
     }
 }
