@@ -75,5 +75,38 @@ namespace Problems1_50
         {
             return a / GCD(a, b) * b;
         }
+        internal List<List<int>> PTriplets()
+        {
+            var triplets = new List<List<int>>();
+            List<int> sublist = new List<int>(3) { 0, 0, 0 };
+            for (int a = 0; a < 1000; a++)
+            {
+                for (int b = 0; b < 1000; b++)
+                {
+                    for (int c = 0; c < 1000; c++)
+                    {
+                        if (a < b && b < c && a*a+b*b == c*c)
+                        {
+                            sublist[0] = a;
+                            sublist[1] = b;
+                            sublist[2] = c;
+                        }
+                    }
+                }
+            }
+            foreach (var item in sublist)
+            {
+                Console.WriteLine(item);
+            }
+            foreach (var item in triplets)
+            {
+                foreach (var i in item)
+                {
+                    Console.Write(i);
+                }
+                Console.WriteLine();
+            }
+            return triplets;
+        }
     }
 }
