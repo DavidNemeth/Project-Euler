@@ -221,5 +221,19 @@ namespace Problems1_50
             Console.WriteLine("b: {0}", triplets[1]);
             Console.WriteLine("c: {0}", triplets[2]);
         }
+        //10
+        internal void SummationOfPrimes(int input = 2000000)
+        {
+            //Find the sum of all the primes below two million.
+            long sum = 2;
+            for (long i = 1; i < input; i += 2)
+            {
+                if (IsPrime(i))
+                {
+                    sum += i;
+                }
+            }
+            Console.WriteLine(sum);
+        }
     }
 }

@@ -15,6 +15,7 @@ namespace Problems1_50
             //problems.SumSquareDifference(100);
             //problems.NthPrime();
             problems.PythagoreanTriplet();
+            problems.SummationOfPrimes();
         }
     }
 }
