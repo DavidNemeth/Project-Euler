@@ -235,5 +235,24 @@ namespace Problems1_50
             }
             Console.WriteLine(sum);
         }
+        //11
+        //TODO:11
+        //12
+        internal void DivisibleTriangularNumber()
+        {
+            //What is the value of the first triangle number to have over five hundred divisors?
+            long trianglenmbr = 0, divisors = 0, i = 1;
+            while (divisors < 500)
+            {
+                divisors = 0;
+                trianglenmbr += i;
+                for (long j = 1; j <= Math.Sqrt(trianglenmbr); j++)
+                {
+                    divisors += trianglenmbr % j == 0 ? 2 : 0;
+                }
+                i++;
+            }
+            Console.WriteLine("The first triangle number to have over five hundred divisors:\n{0}\ndivisors: {1}", trianglenmbr, divisors);
+        }
     }
 }

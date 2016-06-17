@@ -14,8 +14,9 @@ namespace Problems1_50
             //problems.SmallestMultiple();
             //problems.SumSquareDifference(100);
             //problems.NthPrime();
-            problems.PythagoreanTriplet();
-            problems.SummationOfPrimes();
+            //problems.PythagoreanTriplet();
+            //problems.SummationOfPrimes();
+            problems.DivisibleTriangularNumber();
         }
     }
 }
