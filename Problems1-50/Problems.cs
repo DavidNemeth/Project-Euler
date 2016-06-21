@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 
 namespace Problems1_50
 {
@@ -253,6 +254,17 @@ namespace Problems1_50
                 i++;
             }
             Console.WriteLine("The first triangle number to have over five hundred divisors:\n{0}\ndivisors: {1}", trianglenmbr, divisors);
+        }
+        //13
+        internal void FirstTenOFSum(string fileName = "problem13.txt")
+        {
+            //Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.(problem13.txt)
+            string result = File.ReadAllLines(fileName)
+            .Select(BigInteger.Parse)
+            .Aggregate((i1, i2) => i1 + i2)
+            .ToString()
+            .Substring(0, 10);
+            Console.WriteLine(result);
         }
     }
 }

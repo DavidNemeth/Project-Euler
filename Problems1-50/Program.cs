@@ -16,7 +16,8 @@ namespace Problems1_50
             //problems.NthPrime();
             //problems.PythagoreanTriplet();
             //problems.SummationOfPrimes();
-            problems.DivisibleTriangularNumber();
+            //problems.DivisibleTriangularNumber();
+            problems.FirstTenOFSum();
         }
     }
 }
