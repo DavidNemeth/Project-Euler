@@ -20,21 +20,16 @@ namespace Problems1_50
             }
             return isum;
         }
-        internal bool IsPrime(long x)
+        internal bool IsPrime(long n)//O(sqrt(n))
         {
-            if (x > 1)
+            for (int i = 2; i * i < n; i++)
             {
-                long number = (long)Math.Floor(Math.Sqrt(x));
-                for (long i = 2; i <= number; i++)
+                if (n % i == 0)
                 {
-                    if (x % i == 0)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
-                return true;
             }
-            return false;
+            return true;
 
         }
         internal List<int> PrimeList(string FileName = "primes.txt")
@@ -71,9 +66,10 @@ namespace Problems1_50
             }
             return a;
         }
+        //O(LOGN) 
         internal long LCM(long a, long b) //lowest common multiple 
         {
             return a / GCD(a, b) * b;
-        }        
+        }
     }
 }

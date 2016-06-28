@@ -9,7 +9,7 @@ namespace Problems1_50
 {
     internal class Problems : Base
     {
-        //1
+        //1 O(n)
         internal void Problem1(int x = 1000)
         {
             //Find the sum of all the multiples of 3 or 5 below x.
@@ -30,7 +30,7 @@ namespace Problems1_50
             Console.WriteLine("Sums of 3 and 5 multiples from 0 to 1000: {0}", resultLinq);
             Console.WriteLine("Sums of 3 and 5 multiples from 0 to {0}: {1}", x, result);
         }
-        //2
+        //2 O(sqrt(n))
         internal void Problem2(long x = 4000000)
         {
             //By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
@@ -51,7 +51,7 @@ namespace Problems1_50
             }
             Console.WriteLine("The sum of even fibonacci numbers under {0}: {1}", x, result);
         }
-        //3         
+        //3 O(n(sqrt(x))
         internal void Problem3(long number = 600851475143)
         {
             //What is the largest prime factor of the number 600851475143 ? 
@@ -67,15 +67,15 @@ namespace Problems1_50
             }
             Console.WriteLine("Largest primefactor of {0}: {1} ", number, largestPrimeFactor);
         }
-        //4
+        //4 O(n^2)
         internal void Problem4()
         {
             //Find the largest palindrome made from the product of two 3-digit numbers.
             var palindromes = new List<int>();
             int product = 0;
-            for (int i = 1000; i > 99; i--)
+            for (int i = 5000; i > 99; i--)
             {
-                for (int y = 1000; y > 99; y--)
+                for (int y = i + 1; y > 99; y--)
                 {
                     product = i * y;
                     string reversed = product.Reverse();
@@ -88,7 +88,7 @@ namespace Problems1_50
             }
             Console.WriteLine("Largets palindrom from two three digit procduct: {0}", palindromes.Max());
         }
-        //5
+        //5 O(x*logn) 
         internal void Problem5(int by = 1, int to = 20)
         {
             //What is the smallest positive number that is evenly divisible by all of the numbers from number1 to numer2?
@@ -106,7 +106,7 @@ namespace Problems1_50
                 Console.WriteLine("The smallest number evenly divisible from {0} to {1}: {2}", by, to, result);
             }
         }
-        //6
+        //6 O(n)
         internal void Problem6(int input = 100)
         {
             //Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
@@ -122,7 +122,7 @@ namespace Problems1_50
             long result = squareSum - sumSquare;
             Console.WriteLine("The SumSquareDifference of the first {0} netural number is: {1}", input, result);
         }
-        //7
+        //7 O(n*sqrt(n))
         internal void Problem7(int input = 10001)
         {
             //What is the 10001st prime number?
@@ -148,7 +148,7 @@ namespace Problems1_50
                 Console.WriteLine(primes.Last());
             }
         }
-        //8
+        //8 O(n)
         internal void Problem8(string FileName = "Digits.txt")
         {
             //Find the thirteen adjacent digits in the 1000-digit number that have the greatest product.           
@@ -195,7 +195,7 @@ namespace Problems1_50
             Console.WriteLine("From the products of {0} ", items);
 
         }
-        //9
+        //9 O(n^2)
         internal void Problem9()
         {
             //A Pythagorean triplet is a set of three natural numbers, a < b < c, for which, a2 + b2 = c2
@@ -206,7 +206,7 @@ namespace Problems1_50
             int a, b, c;
             for (a = 0; a < num / 3; a++)
             {
-                for (b = 0; b < num / 2; b++)
+                for (b = a + 1; b < num / 2; b++)
                 {
                     c = num - a - b;
                     if (a * a + b * b == c * c)
@@ -222,7 +222,7 @@ namespace Problems1_50
             Console.WriteLine("b: {0}", triplets[1]);
             Console.WriteLine("c: {0}", triplets[2]);
         }
-        //10
+        //10 O(n(sqrt(n))
         internal void Problem10(int input = 2000000)
         {
             //Find the sum of all the primes below two million.
